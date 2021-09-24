@@ -6,6 +6,8 @@
   "author": "Paulo Hernane Fontes e Silva <paulo.hernane.silva@ccc.ufcg.edu.br>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^6.0.7",
+    "morgan": "^1.10.0"
   }
 }
