@@ -38,7 +38,7 @@ app.get("/", (req, res) => {
 });
 
 const server = app.listen(3333, () => {
-  console.log("server started");
+  console.log("server started on localhost:3333");
 });
 
 module.exports = server;
