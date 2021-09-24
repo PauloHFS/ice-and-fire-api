@@ -1,0 +1,13 @@
+{
+  "name": "ice-and-fire-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/PauloHFS/ice-and-fire-api",
+  "author": "Paulo Hernane Fontes e Silva <paulo.hernane.silva@ccc.ufcg.edu.br>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.7",
+    "morgan": "^1.10.0"
+  }
+}
