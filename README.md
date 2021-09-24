@@ -15,3 +15,22 @@ A API está online pelo Replit na URL: [https://ice-and-fire-api.paulohfs.repl.c
 | /pov/:id:              | Retorna todas as informações do personagem que teve PoV passado pelo ID. |
 | /pov/:id:/books        | Retorna todos os livros em que o personagem que teve PoV passado pelo ID aparece. |
 
+# Backend Challenge
+
+Criar uma API em NodeJS que:
+
+- [ x ] Obtenha a informação completa dos principais personagens (`povCharacters`) das Crônicas do Gelo e Fogo.
+- [ x ] Obtenha a capa de um ou mais livros.
+- [ x ] Obtenha o detalhe de um ou mais personagens.
+- [ x ] Obtenha todos os livros relacionados a um personagem.
+- [ x ] Não será permitido inserir informações com URL. Deve-se inserir todas as informações possíveis.
+- [ x ] As informações deverão ser inseridas num banco de dados em MongoDb e a sua API deve usar o seu banco para consumo de dados.
+- [ x ] A capa do livro deverá ser apresentada no formato base64.
+
+## Extras
+- [ ] Implementar testes unitários usando Jest
+- [ ] Implementar autenticação OAuth 2.0
+- [ ] Inserir projeto num container docker 
+- [ x ] Deixar API online para acesso instantâneo
+- [ ] Se até aqui você se divertiu muito, insira na imagem do livro o nome dos seus personagens principais no formato de marca d'água
+- [ x ] Se você não ficou satisfeito com o desafio, insira também o link da Amazon para que possamos comprar os livros :-D (PS: Coloquei do biblio por praticidade)
