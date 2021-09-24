@@ -16,12 +16,20 @@ mongoose.connect(`mongodb+srv://${mongodb_user}:${mongodb_password}@cluster0.gc7
   useUnifiedTopology: true
 });
 
-
 app.use(morgan('dev'));
 
 app.use('/books', book_routes);
 app.use('/characters', character_routes);
 app.use('/pov', pov_character_routes);
+
+app.get('/', (req, res) => {
+  res.json({
+    "books": "https://ice-and-fire-api.paulohfs.repl.co/books",
+    "characters":
+    "https://ice-and-fire-api.paulohfs.repl.co/characters",
+    "povCharacters": "https://ice-and-fire-api.paulohfs.repl.co/pov"
+  });
+});
 
 app.listen(3000, () => {
   console.log('server started');
