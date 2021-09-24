@@ -31,6 +31,11 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/insomnia.json', (req, res) => {
+  res.sendfile("insomnia.json");
+});
+
+
 app.listen(3000, () => {
   console.log('server started');
 });
