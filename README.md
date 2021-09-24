@@ -4,6 +4,8 @@ API desenvolvida para o desafio da Mobix.
 
 A API está online pelo Replit na URL: [https://ice-and-fire-api.paulohfs.repl.co/](https://ice-and-fire-api.paulohfs.repl.co/)
 
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=ice-and-fire-api&uri=https%3A%2F%2Fice-and-fire-api.paulohfs.repl.co%2Finsomnia.json)
+
 | Rotas                  |                                                              |
 | :--------------------- | ------------------------------------------------------------ |
 | /books                 | Retorna o ISBM e a capa (Base64) de todos os livros.         |
