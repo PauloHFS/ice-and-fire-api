@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Character = mongoose.model('character', {
+const Character = mongoose.model('characters', {
   url: String,
   name: String,
   gender: String,

@@ -1,18 +1,28 @@
 const express = require('express');
 const router = express.Router();
-const Pov_character = require('../models/pov_character');
+const Character = require("../models/character");
 
-/*
-router.get("/", async (req, res) => {
-  
-});
-*/
 
-router.get('/pov', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const pov_characters = await Pov_character.find({});
+    const characters = await Character.find({});
 
-    res.json(pov_characters);
+    res.json(characters);
+  } catch (err) {
+    res.json({
+      error: true,
+      message: res.message
+    });
+  }
+});
+
+//TODO resolver o null
+router.get('/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    const character = await Character.findById(id);
+
+    res.json(character);
   } catch (err) {
     res.json({
       error: true,

@@ -6,6 +6,7 @@ const app = express();
 
 const book_routes = require('./src/routes/books.routes');
 const character_routes = require('./src/routes/characters.routes');
+const pov_character_routes = require('./src/routes/characters.pov.routes');
 
 const mongodb_user = process.env['mongodb_user']
 const mongodb_password = process.env[mongodb_user]
@@ -20,6 +21,7 @@ app.use(morgan('dev'));
 
 app.use('/books', book_routes);
 app.use('/characters', character_routes);
+app.use('/characters/pov', pov_character_routes);
 
 app.listen(3000, () => {
   console.log('server started');
