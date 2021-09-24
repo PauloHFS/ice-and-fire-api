@@ -14,4 +14,3 @@ A API está online pelo Replit na URL: [https://ice-and-fire-api.paulohfs.repl.c
 | /pov                   | Retorna a informação de todos os personagens que tiveram Point-of-View nos livros. |
 | /pov/:id:              | Retorna todas as informações do personagem que teve PoV passado pelo ID. |
 | /pov/:id:/books        | Retorna todos os livros em que o personagem que teve PoV passado pelo ID aparece. |
-
