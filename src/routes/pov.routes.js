@@ -1,24 +1,25 @@
 const express = require('express');
 const router = express.Router();
-const Character = require("../models/character");
+const PovCharacter = require("../models/pov_character");
 
 router.get('/', async (req, res) => {
   try {
-    const characters = await Character.find({});
+    const id = req.params.id;
+    const character = await PovCharacter.find({});
 
-    res.json(characters);
+    res.json(character);
   } catch (err) {
     res.json({
       error: true,
-      message: res.message
-    });
+      message: err.message
+    })
   }
 });
 
 router.get('/:id', async (req, res) => {
   try {
     const id = req.params.id;
-    const character = await Character.findById(id);
+    const character = await PovCharacter.findById(id);
 
     res.json(character);
   } catch (err) {
@@ -32,7 +33,7 @@ router.get('/:id', async (req, res) => {
 router.get("/:id/books", async (req, res) => {
   try {
     const id = req.params.id;
-    const character = await Character.findById(id);
+    const character = await PovCharacter.findById(id);
 
     res.json({
       books: character['books'],
