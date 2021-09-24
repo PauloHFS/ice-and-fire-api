@@ -5,9 +5,16 @@
   "repository": "https://github.com/PauloHFS/ice-and-fire-api",
   "author": "Paulo Hernane Fontes e Silva <paulo.hernane.silva@ccc.ufcg.edu.br>",
   "license": "MIT",
+  "scripts": {
+    "run": "nodemon index.js"
+  },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^6.0.7",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
   }
 }

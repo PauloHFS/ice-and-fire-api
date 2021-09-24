@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
@@ -8,10 +9,11 @@ const book_routes = require('./src/routes/books.routes');
 const character_routes = require('./src/routes/characters.routes');
 const pov_character_routes = require('./src/routes/pov.routes');
 
-const mongodb_user = process.env['mongodb_user']
-const mongodb_password = process.env[mongodb_user]
+const mongodb_user = process.env.MONGODB_USER;
+const mongodb_password = process.env.MONGODB_PASSWORD;
+const mongodb_database_name = process.env.MONGODB_DATABASE_NAME;
 
-mongoose.connect(`mongodb+srv://${mongodb_user}:${mongodb_password}@cluster0.gc7j3.mongodb.net/ice-and-fire-api?retryWrites=true&w=majority`,{
+mongoose.connect(`mongodb+srv://${mongodb_user}:${mongodb_password}@cluster0.gc7j3.mongodb.net/${mongodb_database_name}?retryWrites=true&w=majority`,{
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
