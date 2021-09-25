@@ -1,49 +1,81 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 const Character = require("../models/character");
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
+  let status_code = 500;
+  let bodyResponse = {};
+
   try {
     const characters = await Character.find({});
 
-    res.json(characters);
+    if (characters.length != 0) {
+      status_code = 200;
+      bodyResponse = characters;
+    } else {
+      status_code = 404;
+    }
   } catch (err) {
-    res.json({
+    bodyResponse = {
       error: true,
-      message: res.message
-    });
+      message: err.message,
+    };
   }
+
+  res.status(status_code).send(bodyResponse);
 });
 
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
+  let status_code = 500;
+  let bodyResponse = {};
+
   try {
     const id = req.params.id;
     const character = await Character.findById(id);
 
-    res.json(character);
+    if (character.length != 0) {
+      status_code = 200;
+      bodyResponse = character;
+    } else {
+      status_code = 400;
+    }
+
   } catch (err) {
-    res.json({
+    bodyResponse = {
       error: true,
       message: err.message
-    })
+    }
   }
+
+  res.status(status_code).send(bodyResponse);
 });
 
 router.get("/:id/books", async (req, res) => {
+  let status_code = 500;
+  let bodyResponse = {};
+
   try {
     const id = req.params.id;
     const character = await Character.findById(id);
 
-    res.json({
-      books: character['books'],
-      povBooks: character['povBooks']
-    });
+    if (character.length != 0) {
+      status_code = 200;
+      bodyResponse = {
+        books: character['books'],
+        povBooks: character['povBooks']
+      }
+    } else {
+      status_code = 404;
+    }
+    
   } catch (err) {
-    res.json({
+    bodyResponse = {
       error: true,
       message: err.message
-    });
+    }
   }
+
+  res.status(status_code).send(bodyResponse);
 });
 
 module.exports = router;
